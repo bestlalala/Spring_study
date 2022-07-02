@@ -5,10 +5,7 @@ import com.sparta.week2.domain.CourseRepository;
 import com.sparta.week2.models.CourseRequestDto;
 import com.sparta.week2.service.CourseService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,4 +30,14 @@ public class CourseController {
         return courseRepository.save(course);
     }
 
+    @PutMapping("/api/courses/{id}")
+    public Long updateCourse(@PathVariable Long id, @RequestBody CourseRequestDto requestDto) {
+        return courseService.update(id, requestDto);
+    }
+
+    @DeleteMapping("/api/courses/{id}")
+    public Long deleteCourse(@PathVariable Long id) {
+        courseRepository.deleteById(id);
+        return id;
+    }
 }
