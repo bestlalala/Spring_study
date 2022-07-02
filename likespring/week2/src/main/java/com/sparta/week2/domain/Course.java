@@ -19,6 +19,10 @@ public class Course extends Timestamped {
     @Column(nullable = false)
     private String tutor;
 
+    public Long getId() {
+        return id;
+    }
+
     public String getTitle() {
         return this.title;
     }
@@ -32,7 +36,9 @@ public class Course extends Timestamped {
         this.tutor = tutor;
     }
 
-    public Long getId() {
-        return id;
+    public void update(Course course) {
+        this.title = course.title;
+        this.tutor = course.tutor;
     }
+
 }
