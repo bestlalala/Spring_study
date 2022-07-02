@@ -2,6 +2,7 @@ package com.sparta.week2;
 
 import com.sparta.week2.domain.Course;
 import com.sparta.week2.domain.CourseRepository;
+import com.sparta.week2.models.CourseRequestDto;
 import com.sparta.week2.service.CourseService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,8 +24,7 @@ public class Week2Application {
     public CommandLineRunner demo(CourseRepository courseRepository, CourseService courseService) {
         return (args) -> {
             // 데이터 저장
-            Course course1 = new Course("프론트엔드의 꽃, 리액트", "이연수");
-            courseRepository.save(course1);
+            courseRepository.save(new Course("프론트엔드의 꽃, 리액트", "이연수"));
 
             // 데이터 모두 조회
             System.out.println("데이터 인쇄");
@@ -36,13 +36,8 @@ public class Week2Application {
                 System.out.println(c.getTutor());
             }
 
-            // 데이터 하나 조회하기
-            Course course = courseRepository.findById(1L).orElseThrow(
-                    () -> new IllegalArgumentException("해당 아이디가 존재하지 않습니다.")
-            );
-
-            Course new_course = new Course("웹개발의 봄, Spring", "이연수");
-            courseService.update(1L, new_course);
+            CourseRequestDto requestDto = new CourseRequestDto("웹개발의 봄, Spring", "이연수");
+            courseService.update(1L, requestDto);
             courseList = courseRepository.findAll();
             for (int i = 0; i < courseList.size(); i++) {
                 Course c = courseList.get(i);
