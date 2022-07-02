@@ -7,7 +7,7 @@ import javax.persistence.*;
 @NoArgsConstructor // 기본 생성자를 대신 생성해준다.
 @Entity // 테이블임을 나타낸다.
 
-public class Course {
+public class Course extends Timestamped {
 
     @Id // ID값, Primary Key로 사용하겠다는 뜻
     @GeneratedValue(strategy = GenerationType.AUTO) // 자동 증가 명령
@@ -30,5 +30,9 @@ public class Course {
     public Course(String title, String tutor) {
         this.title = title;
         this.tutor = tutor;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
