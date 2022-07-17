@@ -1,5 +1,6 @@
 package com.likespring.week4.domain;
 
+import com.likespring.week4.models.ItemDto;
 import com.likespring.week4.models.ProductMypriceRequestDto;
 import com.likespring.week4.models.ProductRequestDto;
 import lombok.Getter;
@@ -44,5 +45,9 @@ public class Product extends Timestamped {
     // 관심 가격 변경 시 이용한다.
     public void update(ProductMypriceRequestDto requestDto) {
         this.myprice = requestDto.getMyprice();
+    }
+
+    public void updateByItemDto(ItemDto itemDto) {
+        this.lprice = itemDto.getLprice();
     }
 }
