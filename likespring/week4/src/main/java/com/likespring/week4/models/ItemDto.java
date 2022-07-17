@@ -12,7 +12,7 @@ public class ItemDto {
     private int lprice;
 
     public ItemDto(JSONObject itemJson) {
-        this.title = itemJson.getString("title)");
+        this.title = itemJson.getString("title");
         this.link = itemJson.getString("link");
         this.image = itemJson.getString("image");
         this.lprice = itemJson.getInt("lprice");
