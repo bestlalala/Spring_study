@@ -1,5 +1,7 @@
-package com.likespring.week4;
+package com.likespring.week4.controller;
 
+import com.likespring.week4.domain.ProductRepository;
+import com.likespring.week4.domain.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

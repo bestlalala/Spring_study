@@ -1,4 +1,4 @@
-package com.likespring.week4;
+package com.likespring.week4.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

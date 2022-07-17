@@ -1,4 +1,4 @@
-package com.likespring.week4;
+package com.likespring.week4.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

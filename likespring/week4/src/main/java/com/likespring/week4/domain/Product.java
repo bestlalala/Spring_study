@@ -1,4 +1,4 @@
-package com.likespring.week4;
+package com.likespring.week4.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor // 기본 생성자를 만들어준다.
 @Entity// DB 테이블 역할을 한다.
-public class Product extends Timestamped{
+public class Product extends Timestamped {
     // ID가 자동으로 생성 및 증가한다.
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
