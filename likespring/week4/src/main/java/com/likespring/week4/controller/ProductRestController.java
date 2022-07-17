@@ -2,8 +2,11 @@ package com.likespring.week4.controller;
 
 import com.likespring.week4.domain.ProductRepository;
 import com.likespring.week4.domain.Product;
+import com.likespring.week4.models.ProductRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -18,5 +21,13 @@ public class ProductRestController {
     @GetMapping("/api/products")
     public List<Product> getProducts() {
         return productRepository.findAll();
+    }
+
+    // 신규 상품 등록
+    @PostMapping("/api/products")
+    public Product createProduct(@RequestBody ProductRequestDto requestDto) {
+        Product product = new Product(requestDto);
+        productRepository.save(product);
+        return product;
     }
 }
