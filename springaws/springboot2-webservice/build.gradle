@@ -10,7 +10,7 @@ configurations {
     }
 }
 
-group 'org.springaws'
+group 'com.springaws'
 version '1.0-SNAPSHOT'
 
 repositories {
