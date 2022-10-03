@@ -32,6 +32,10 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testAnnotationProcessor('org.projectlombok:lombok')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Spring Data JPA 적용
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('com.h2database:h2')
 }
 
 test {
